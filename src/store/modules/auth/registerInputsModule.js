@@ -1,0 +1,122 @@
+export default {
+  state: {
+    registerInputs: [
+      {
+        valid: false,
+        classes: ["col-12", "col-md-6", "text-left", "py-2"],
+        label: "Imię",
+        simpleRules: ["required"],
+        complexRules: [],
+        id: "registerFirstName",
+        key: "firstName",
+        value: "",
+      },
+      {
+        valid: false,
+        classes: ["col-12", "col-md-6", "text-left", "py-2"],
+        label: "Nazwisko",
+        simpleRules: ["required"],
+        complexRules: [],
+        id: "registerLastName",
+        key: "lastName",
+        value: "",
+      },
+      {
+        valid: false,
+        classes: ["col-12", "col-md-6", "text-left", "py-2"],
+        label: "E-mail",
+        simpleRules: ["required", "email"],
+        complexRules: [],
+        id: "registerEmail",
+        key: "email",
+        value: "",
+      },
+      {
+        valid: false,
+        classes: ["col-12", "col-md-6", "text-left", "py-2"],
+        label: "Hasło",
+        simpleRules: ["required", "passwordLength"],
+        complexRules: [
+          {
+            name: "passwordConfirm",
+            match: "",
+            matchId: "registerPasswordConfirm",
+          },
+        ],
+        id: "registerPassword",
+        key: "password",
+        type: "password",
+        value: "",
+      },
+      {
+        valid: false,
+        classes: ["col-12", "col-md-6", "text-left", "py-2"],
+        label: "Potwierdź Hasło",
+        simpleRules: ["required", "passwordLength"],
+        complexRules: [
+          {
+            name: "passwordConfirm",
+            match: "",
+            matchId: "registerPassword",
+          },
+        ],
+        id: "registerPasswordConfirm",
+        key: "passwordConfirm",
+        type: "password",
+        value: "",
+      },
+      {
+        valid: false,
+        classes: ["col-12", "col-md-6", "text-left", "py-2"],
+        label: "Nr telefonu",
+        simpleRules: ["required", "phone"],
+        complexRules: [],
+        id: "registerPhone",
+        key: "phone",
+        value: "",
+      },
+
+      {
+        valid: false,
+        classes: ["col-12", "text-left", "py-2"],
+        label: "Klient Hurtowy",
+        simpleRules: [],
+        complexRules: [],
+        id: "registerHurt",
+        key: "hurt",
+        type: "checkbox",
+        hr: true,
+        value: false,
+      },
+      {
+        valid: false,
+        classes: ["col-12", "col-md-6", "text-left", "py-2"],
+        label: "Nazwa firmy",
+        simpleRules: [],
+        complexRules: [],
+        id: "registerCompany",
+        key: "company",
+        hurtInput: false,
+      },
+      {
+        valid: false,
+        classes: ["col-12", "col-md-6", "text-left", "py-2"],
+        label: "NIP",
+        simpleRules: ["nip"],
+        complexRules: [],
+        id: "registerNip",
+        key: "nip",
+        hurtInput: false,
+      },
+    ],
+  },
+
+  getters: {
+    registerInputs: (state) => state.registerInputs,
+  },
+
+  mutations: {
+    registerInputs: (state, registerInputs) =>
+      (state.registerInputs = registerInputs),
+  },
+};
